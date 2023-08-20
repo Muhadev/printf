@@ -1,5 +1,14 @@
-#ifndef PRINTF_DESIGN_H
-#define PRINTF_DESIGN_H
+#ifndef _PRINTF_H
+#define _PRINTF_H
 #include <stddef.h>
-void printf_design(const char *string_format, ...)
+#include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
+
+int _printf(const char* format, ...);
+void printf_design(const char *string_format, ...);
+
+
+
+
 #endif
