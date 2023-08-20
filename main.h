@@ -5,7 +5,10 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int _printf(const char* format, ...);
+/* _printf */
+int _printf(const char *format, ...);
+
+
 void printf_design(const char *string_format, ...);
 
 
