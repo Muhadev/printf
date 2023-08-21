@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	/*char ch;*/
-	int i = 0, n_fprinted = 0;
+	int i = 0, n_printed = 0;
 	va_list args;
 
 	if (!format) /* NULL value passed */
@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%') /*An accepted format specified */
 		{
-			formatsp(format + i, args, &n_fprinted);
+			formatsp(format + i, args, &n_printed);
 			format++;/*Skip the actual fmt specifier*/
 		}
 		else if (format[i] == '\0')
@@ -28,11 +28,11 @@ int _printf(const char *format, ...)
 		else /* No format specifier */
 		{
 			_putchar(format[i], 1);
-			n_fprinted++;
+			n_printed++;
 		}
 		i++;
 	}
 	va_end(args);
 
-	return (n_fprinted);
+	return (n_printed);
 }
