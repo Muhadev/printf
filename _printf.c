@@ -1,49 +1,38 @@
 #include "main.h"
-
 /**
- * _printf - prints
- * @format: the format
- * Return: number printed *
-*/
-
+ * _printf - writes to stdout according to data format.
+ * @format: string to be written
+ * Return: num of char printed.
+ */
 int _printf(const char *format, ...)
 {
-	int tt = 0;
-	va_list ar;
-	char *p, *str;
-	prm_t prm = PRM_INIT;
+	/*char ch;*/
+	int i = 0, n_fprinted = 0;
+	va_list args;
 
-	va_start(ar, format);
+	if (!format) /* NULL value passed */
+		return (-1);
 
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
-	for (p = (char *)format; *p; p++)
+	va_start(args, format);
+	while (format[i])/* Iterate through arguments */
 	{
-		init_prm(&prm, ar);
-		if (*p != '%')
+		if (format[i] == '%') /*An accepted format specified */
 		{
-			tt += _putchar(*p);
-			continue;
+			formatsp(format + i, args, &n_fprinted);
+			format++;/*Skip the actual fmt specifier*/
 		}
-		str = p;
-		p++;
-		while (get_flag(p, &prm, ar))
+		else if (format[i] == '\0')
 		{
-			p++;
+			break;
 		}
-		p = get_width(p, &prm, ar);
-		p = get_precision(p, &prm, ar);
-		if (get_modifier(p, &prm))
-			p++;
-		if (get_specifier(p))
-			tt += print_from_to(str, p,
-				prm.l_modifier || prm.h_modifier ? p - 1 : 0);
-		else
-			tt += get_print_func(p, ar, &prm);
+		else /* No format specifier */
+		{
+			_putchar(format[i], 1);
+			n_fprinted++;
+		}
+		i++;
 	}
-	_putchar(BUF_FLUSH);
-	va_end(ar);
-	return (tt);
+	va_end(args);
+
+	return (n_fprinted);
 }
