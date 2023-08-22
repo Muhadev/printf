@@ -23,4 +23,8 @@ int format_mod(va_list arguments);
 int format_d(va_list arguments);
 int format_b(va_list arguments);
 int format_i(va_list arguments);
+int format_x(va_list arguments);
+int format_X(va_list arguments);
+int format_o(va_list arguments);
+int format_u(va_list arguments);
 #endif /* MAIN_H */
