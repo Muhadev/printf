@@ -10,23 +10,15 @@
 int _putchar(char c)
 {
 static int p;
-static char buffer[BUFF_SIZE];
-if (c == -1)
+static char buff[1024];
+if (c == -2 || p >= 1024)
 {
-	p = 0;
-return (0);
-}
-if (c == -2 || p == 1024)
-{
-	write(1, buffer, p);
+	write(1, &buff, p);
 	p = 0;
 }
-if (c != -1 && c != -2)
+if (c != -1)
 {
-	buffer[p] = c;
+	buff[p] = c;
 	p++;
 return (1);
-
-}
-return (0);
 }

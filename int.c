@@ -33,7 +33,6 @@ return (k);
 }
 
 
-
 /**
  * format_u - print unsigned int output
  * @arguments: variable inputs

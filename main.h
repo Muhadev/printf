@@ -14,15 +14,6 @@ typedef struct mem
 	int (*str)(va_list);
 } offset;
 
-
-typedef struct flags
-{
-    int plus;
-    int space;
-    int hash;
-} flags_t;
-int get_flag(char s, flags_t *f);
-
 int _printf(const char *format, ...);
 int _putchar(char c);
 int (*apply_func(char letter))(va_list arguments);
@@ -36,4 +27,5 @@ int format_x(va_list arguments);
 int format_X(va_list arguments);
 int format_o(va_list arguments);
 int format_u(va_list arguments);
+int _strings(char *s);
 #endif /* MAIN_H */
