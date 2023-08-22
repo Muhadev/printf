@@ -14,6 +14,15 @@ typedef struct mem
 	int (*str)(va_list);
 } offset;
 
+
+typedef struct flags
+{
+    int plus;
+    int space;
+    int hash;
+} flags_t;
+int get_flag(char s, flags_t *f);
+
 int _printf(const char *format, ...);
 int _putchar(char c);
 int (*apply_func(char letter))(va_list arguments);
