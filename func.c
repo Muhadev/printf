@@ -70,7 +70,7 @@ return (_putchar(characters));
  */
 int format_d(va_list arguments)
 {
-unsigned int divisor, num, add, temp; 
+unsigned int divisor, num, add, temp;
 int p;
 	p = va_arg(arguments, int);
 	add = 0;
