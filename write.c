@@ -9,7 +9,7 @@
  */
 int _putchar(char c)
 {
-static char Bluf[1024];
+static char bluf[1024];
 static int a;
 if (c == -1 || a >= 1024)
 {
