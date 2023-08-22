@@ -50,5 +50,5 @@ else
 	va_end(arguments);
 return (point);
 }
-return (-n);
+return (-1)
 }
