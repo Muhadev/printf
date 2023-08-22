@@ -35,20 +35,18 @@ int format_s(va_list arguments)
 char *string;
 int num;
 int i;
+	num = 0;
 	i = 0;
 	string = va_arg(arguments, char*);
-while (string == NULL)
+if (string == NULL)
 	string = "NULL";
-if (string[num] != '\0')
+while (string[num] != '\0')
 {
 	_putchar(string[num]);
 	num++;
 	i++;
 }
-else
-{
 return (i);
-}
 }
 
 
@@ -59,7 +57,7 @@ return (i);
  */
 int format_c(va_list arguments)
 {
-char characters;
+int characters;
 	characters = va_arg(arguments, int);
 return (_putchar(characters));
 }

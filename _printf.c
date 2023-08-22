@@ -11,11 +11,12 @@
 int _printf(const char *format, ...)
 {
 if (format != NULL)
+{
 int point = 0;
 int num = 0;
 int (*ptr)(va_list);
 va_list arguments;
-va_start(arguments, format);
+	va_start(arguments, format);
 if (format[0] == '%' && format[1] == '\0')
 return (-1);
 while (format[num] != '\0')
@@ -36,19 +37,19 @@ if (ptr)
 }
 else
 {
-	point = _putchar(format[1 + num]) + _putchar(format[num]);
-	num = num + 2;
+	point = _putchar(format[num]) + _putchar(format[num + 1]);
 }
+	num += 2;
 }
 }
 else
 {
 	point += _putchar(format[num]);
-	num = num + 1;
+	num++;
 }
 }
 	va_end(arguments);
 return (point);
 }
-return (-1)
+return (-1);
 }

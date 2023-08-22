@@ -12,12 +12,12 @@ int integer = 0;
 	offset cond[] = {
 		{"%", format_mod},
 		{"d", format_d},
-		{"i", format_d},
+		{"i", format_i},
 		{"c", format_c},
 		{"s", format_s},
 		{NULL, NULL}
 };
-if (cond[integer].NoNull)
+while (cond[integer].NoNull)
 {
 if (letter == cond[integer].NoNull[0])
 return (cond[integer].str);
