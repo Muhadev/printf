@@ -9,16 +9,16 @@
  */
 int _putchar(char c)
 {
-static char BUFF[1024];
+static char Bluf[1024];
 static int a;
 if (c == -1 || a >= 1024)
 {
-	write(1, &BUFF, a);
+	write(1, &bluf, a);
 	a = 0;
 }
 if (c != -1)
 {
-	BUFF[a] = c;
+	bluf[a] = c;
 	a++;
 }
 return (1);
