@@ -10,7 +10,7 @@ int j;
 int a[100];
 	k = 0;
 	j = k - 1;
-	i = va_arg(arguments, unsigned int);
+	i = va_arg(arguments, int);
 if (i <= 0)
 {
 	_putchar('0');
@@ -25,7 +25,7 @@ while (i > 0)
 while (j >= 0)
 {
 	_putchar('0' + a[j]);
-	j--;
+	j++;
 }
 return (k);
 }
