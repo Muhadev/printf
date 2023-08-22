@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include "main.h"
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
@@ -9,7 +10,7 @@
 int _putchar(char c)
 {
 static int p;
-static char buffer[1024];
+static char buffer[BUFF_SIZE];
 if (c == -1)
 {
 	p = 0;
