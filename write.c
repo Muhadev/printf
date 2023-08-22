@@ -11,27 +11,17 @@ int _putchar(char c)
 {
 char BUFF[1024];
 int index;
-if (c != -1)
+if (index >= 1024 || c == -1)
 {
-	BUFF[index] = c;
-	index++;
-if (index >= 1024)
+	write(1, BUFF, index);
+	index = 0;
+if (c != -1)
 	move_buff(BUFF, &index);
 }
 else if (index > 0)
 {
-	move_buff(BUFF, &index);
+	BUFF[index] = c;
+	index++
 }
 return (1);
-}
-
-/**
- * move_buff - write to standard output
- * @BUFF: collect characters
- * @index: pointing to index for buffer
- */
-void move_buff(char *BUFF, int *index)
-{
-	write(1, BUFF, *index);
-	*index = 0;
 }
