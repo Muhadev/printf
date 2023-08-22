@@ -13,15 +13,13 @@ char BUFF[1024];
 int index;
 if (index >= 1024 || c == -1)
 {
-	write(1, BUFF, index);
+	write(1, &BUFF, index);
 	index = 0;
-if (c != -1)
-	move_buff(BUFF, &index);
 }
-else if (index > 0)
+if (c != -1)
 {
 	BUFF[index] = c;
-	index++
+	index++;
 }
 return (1);
 }
