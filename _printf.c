@@ -10,6 +10,8 @@
 */
 int _printf(const char *format, ...)
 {
+if (format != NULL)
+{
 int point = 0, num = 0;
 int (*ptr)(va_list);
 va_list arguments;
@@ -17,8 +19,6 @@ va_list arguments;
 if (format[0] == '%' && format[1] == '\0')
 return (-1);
 while (format != NULL && format[num] != '\0')
-{
-if (format[num] != '\0')
 {
 if (format[num] == '%')
 {
@@ -44,8 +44,8 @@ else
 	point += _putchar(format[num]);
 	num++;
 }
-	va_end(arguments);
 }
+	va_end(arguments);
 return (point);
 }
 return (-1);
