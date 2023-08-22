@@ -18,7 +18,7 @@ int integer = 0;
 		{"b", format_b},
 		{NULL, NULL}
 };
-while (cond[integer].NoNull)
+while (cond[integer].NoNull != NULL)
 {
 if (letter == cond[integer].NoNull[0])
 return (cond[integer].str);

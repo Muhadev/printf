@@ -33,10 +33,8 @@ else
 if (ptr)
 	point = point + ptr(arguments);
 else
-{
 	point = _putchar(format[num]) + _putchar(format[num + 1]);
-}
-	num += 2;
+num += 2;
 }
 }
 else
