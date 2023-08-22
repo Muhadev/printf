@@ -14,11 +14,11 @@ int point = 0, num = 0;
 int (*ptr)(va_list);
 va_list arguments;
 	va_start(arguments, format);
-if (format != NULL)
-{
 if (format[0] == '%' && format[1] == '\0')
 return (-1);
-while (format[num] != '\0')
+while (format != NULL && format[num] != '\0')
+{
+if (format[num] != '\0')
 {
 if (format[num] == '%')
 {
