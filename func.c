@@ -70,31 +70,32 @@ return (_putchar(characters));
  */
 int format_d(va_list arguments)
 {
-int num = va_arg(arguments, int);
-int count = 0;
-int digit;
-int divisor = 1;
-int temp = num;
-if (num < 0)
+unsigned int divisor, num, add, temp; 
+int p;
+	p = va_arg(arguments, int);
+	add = 0;
+if (p < 0)
 {
-	_putchar('-');
-	num = -num;
-	count++;
+	num = (-1 * p);
+	add = add + _putchar('-');
 }
-while (temp >= 10)
+else
 {
-	divisor *= 10;
+	num = p;
+}
+	temp = num;
+	divisor = 1;
+while (temp > 9)
+{
 	temp /= 10;
+	divisor *= 10;
 }
-while (divisor > 0)
+while (divisor >= 1)
 {
-	digit = num / divisor;
-	num %= divisor;
+	add = add + _putchar('0' + ((num / divisor) % 10));
 	divisor /= 10;
-	_putchar('0' + digit);
-	count++;
 }
-return (count);
+return (add);
 }
 
 
