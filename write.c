@@ -33,5 +33,5 @@ return (1);
 void move_buff(char *BUFF, int *index)
 {
 	write(1, BUFF, *index);
-	*i = 0;
+	*index = 0;
 }
