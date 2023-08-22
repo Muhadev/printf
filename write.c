@@ -7,18 +7,19 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putch(char ch)
+int _putchar(char c)
 {
 static int p;
 static char buff[1024];
-if (ch == -2 || p >= 1024)
+if (c == -2 || p >= 1024)
 {
 	write(1, &buff, p);
 	p = 0;
 }
-if (ch != -1)
+if (c != -1)
 {
-	buff[p] = ch;
+	buff[p] = c;
 	p++;
+}
 return (1);
 }
