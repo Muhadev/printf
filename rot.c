@@ -5,7 +5,7 @@
  * Return: counter
  *
  */
-int format_i(va_list arguments);
+int format_i(va_list arguments)
 {
 	int i, j, counter = 0;
 	int k = 0;
