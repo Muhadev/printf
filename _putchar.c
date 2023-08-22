@@ -24,8 +24,8 @@ if (c != -1 && c != -2)
 {
 	buffer[p] = c;
 	p++;
-}
 return (1);
+
 }
 return (0);
 }
