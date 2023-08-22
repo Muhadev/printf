@@ -27,5 +27,4 @@ int format_x(va_list arguments);
 int format_X(va_list arguments);
 int format_o(va_list arguments);
 int format_u(va_list arguments);
-int _inputs(char *ptr);
 #endif /* MAIN_H */
