@@ -32,9 +32,7 @@ else
 {
 	ptr = apply_func(format[num + 1]);
 if (ptr)
-{
 	point = point + ptr(arguments);
-}
 else
 {
 	point = _putchar(format[num]) + _putchar(format[num + 1]);

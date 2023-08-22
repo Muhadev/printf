@@ -15,6 +15,7 @@ int integer = 0;
 		{"i", format_i},
 		{"c", format_c},
 		{"s", format_s},
+		{"b", format_b},
 		{NULL, NULL}
 };
 while (cond[integer].NoNull)

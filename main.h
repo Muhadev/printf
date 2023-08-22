@@ -21,6 +21,7 @@ int format_s(va_list arguments);
 int format_c(va_list arguments);
 int format_mod(va_list arguments);
 int format_d(va_list arguments);
+int format_b(va_list arguments);
 int format_i(va_list arguments);
 
 
