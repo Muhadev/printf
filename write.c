@@ -25,7 +25,12 @@ else if (index > 0)
 return (1);
 }
 
-void move_buff (char *BUFF, int *index)
+/**
+ * move_buff - write to standard output
+ * @BUFF: collect characters
+ * @index: pointing to index for buffer
+ */
+void move_buff(char *BUFF, int *index)
 {
 	write(1, BUFF, *index);
 	*i = 0;
