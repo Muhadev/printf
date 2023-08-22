@@ -27,4 +27,6 @@ int format_x(va_list arguments);
 int format_X(va_list arguments);
 int format_o(va_list arguments);
 int format_u(va_list arguments);
+
+int flag_char(char s, flags_t *f)
 #endif /* MAIN_H */
