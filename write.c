@@ -23,3 +23,17 @@ if (c != -1)
 }
 return (1);
 }
+
+/**
+ * _inputs - output a string to stout
+ * @ptr: point to the string 
+ * Return: chars given
+ */
+
+int _inputs(char *ptr)
+{
+register int n;
+for (n = 0; ptr[n] != '\0'; n++)
+	_putchar(ptr[n]);
+return (n);
+}
