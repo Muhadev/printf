@@ -11,7 +11,7 @@ int format_mod(va_list arguments)
 {
 char *array;
 
-	array = "%",
+	array = "%";
 while (va_arg(arguments, int) == *array)
 {
 return (*array);
