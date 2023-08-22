@@ -10,7 +10,7 @@ int j;
 int a[100];
 	k = 0;
 	j = k - 1;
-	i = va_arg(arguments,unsigned int);
+	i = va_arg(arguments, unsigned int);
 if (i <= 0)
 {
 	_putchar('0');
