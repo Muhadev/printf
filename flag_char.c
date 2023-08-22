@@ -8,7 +8,7 @@
  * Return: 1 if a flag has been turned on, 0 otherwise
  */
 
-int flag_char(char c, flags_t *f)
+int flag_char(char s, flags_t *f)
 {
     int i = 0;
 
