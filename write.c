@@ -15,7 +15,7 @@ if (c != -1)
 {
 	BUFF[index] = c;
 	index++;
-if (i >= 1024)
+if (index >= 1024)
 	move_buff(BUFF, &index);
 }
 else if (index > 0)
