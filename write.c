@@ -10,16 +10,16 @@
 int _putchar(char c)
 {
 char BUFF[1024];
-int index;
-if (index >= 1024 || c == -1)
+int a;
+if (c == -1 || a >= 1024)
 {
-	write(1, &BUFF, index);
-	index = 0;
+	write(1, &BUFF, a);
+	a = 0;
 }
 if (c != -1)
 {
-	BUFF[index] = c;
-	index++;
+	BUFF[a] = c;
+	a++;
 }
 return (1);
 }
