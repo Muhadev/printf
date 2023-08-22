@@ -14,6 +14,7 @@ if (c == -1)
 {
 	p = 0;
 return (0);
+}
 if (c == -2 || p == 1024)
 {
 	write(1, buffer, p);
@@ -23,6 +24,7 @@ if (c != -1 && c != -2)
 {
 	buffer[p] = c;
 	p++;
+}
 return (1);
 }
 return (0);
