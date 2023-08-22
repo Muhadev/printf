@@ -1,18 +1,29 @@
-#ifndef PRINTF_DESIGN_H
-#define PRINTF_DESIGN_H
-#include <stddef.h>
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-typedef struct
+/**
+ * struct mem - struct
+ * @NoNull: does not support NULL
+ * @str: applied func
+ */
+typedef struct mem
 {
-int l_modifier;
-int h_modifier;
-} prm_t;
-void printf_design(const char *string_format, prm_t *prm, ...)
+	char *NoNull;
+	int (*str)(va_list);
+} offset;
 
 
-int signed_int_spec(va_list info);
-int unsigned_spec(va_list info);
-int octa_spec(va_list info);
-int hexa_spec(va_list info, char s);
+int _putchar(char c);
+int (*apply_func(char letter))(va_list arguments);
+int format_s(va_list arguments);
+int format_c(va_list arguments);
+int format_mod(va_list arguments);
+int format_d(va_list arguments);
+int format_d(va_list arguments);
+
+int _printf(const char *format, ...);
 #endif
