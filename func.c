@@ -9,19 +9,14 @@
  */
 int format_mod(va_list arguments)
 {
-const char *array;
-int n;
-	n = 0;
-	array = va_arg(arguments, const char*);
-while (array[n] != '\0')
+char *array;
+
+	array = "%",
+while (va_arg(arguments, int) == *array)
 {
-if (array[n] == '%' && array[n + 1] != '\0')
-{
-return (array[n + 1]);
+return (*array);
 }
-	n++;
-}
-return (-1);
+return (*array);
 }
 
 
@@ -39,7 +34,7 @@ int i;
 	i = 0;
 	string = va_arg(arguments, char*);
 if (string == NULL)
-	string = "NULL";
+	string = "(null)";
 while (string[num] != '\0')
 {
 	_putchar(string[num]);

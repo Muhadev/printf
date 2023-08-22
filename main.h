@@ -14,7 +14,7 @@ typedef struct mem
 	int (*str)(va_list);
 } offset;
 
-
+int _printf(const char *format, ...);
 int _putchar(char c);
 int (*apply_func(char letter))(va_list arguments);
 int format_s(va_list arguments);
@@ -25,6 +25,5 @@ int format_b(va_list arguments);
 int format_i(va_list arguments);
 
 
-int _printf(const char *format, ...);
 
 #endif /* MAIN_H */
