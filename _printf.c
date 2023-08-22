@@ -1,42 +1,53 @@
 #include "main.h"
-
+#include <stdio.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdarg.h>
 /**
- * _printf - a function that produces output according to a format.
- * @format: a character string.
- * The format string is composed of zero or more directives.
- *
- * Return: the number of characters printed
- * (excluding the null byte used to end output to strings)
- */
-
+ * _printf - customised printf
+ * @format: of spec format
+ * Return: variables output
+*/
 int _printf(const char *format, ...)
 {
-	int char_count;
-	va_list arg_ptr;
-
-	char_count = 0;
-
-	if (format[0] == '\0')
-	{
-		return (0);
-	}
-
-	if ((format[0] == '%' && format[1] == '\0')
-			|| (format[0] == '%' && format[1] == ' ' && format[2] == '\0'))
-	{
-		return (-1);
-	}
-
+int point = 0, num = 0;
+int (*ptr)(va_list);
+va_list arguments;
+va_start(arguments, format);
 	if (format != NULL)
 	{
-		va_start(arg_ptr, format);
-		char_count += scan_format(format, arg_ptr);
-		va_end(arg_ptr);
-	}
-	else
-	{
+		if (format[0] == '%' && format[1] == '\0')
 		return (-1);
-	}
-
-	return (char_count);
+	while (format[num] != '\0')
+	{
+		if (format[num] == '%')
+		{
+			if (format[num + 1] == '%')
+		{
+			point += _putchar(format[num]);
+			num = num + 2;
+		}
+		else
+		{
+			ptr = apply_func(format[num + 1]);
+			if (ptr)
+			{
+				point = point + ptr(arguments);
+			}
+		else
+		{
+			point = _putchar(format[num]) + _putchar(format[num + 1]);
+		}
+		num += 2;
+		}
+		}
+		else
+		{
+			point += _putchar(format[num]);
+			num++;
+		}
+	}	va_end(arguments);
+return (point);
+}
+return (-1);
 }
