@@ -9,8 +9,8 @@
  */
 int _putchar(char c)
 {
-char BUFF[1024];
-int a;
+static char BUFF[1024];
+static int a;
 if (c == -1 || a >= 1024)
 {
 	write(1, &BUFF, a);
