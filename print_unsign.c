@@ -25,9 +25,9 @@ if (prec > 0 && prec < n)
 while (prec > n)
 {
 	buffer[--pt] = '0';
-	n++
+	n++;
 }
-if ((f_lag & zero) && !(f_lags & minus))
+if ((f_lags & zero) && !(f_lags & minus))
 	make = '0';
 if (width > n)
 {

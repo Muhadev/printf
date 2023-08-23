@@ -16,13 +16,12 @@ int format_i(va_list content, char buffer[],
 {
 int n = BUFF_SIZE - 2;
 int issue = 0;
-long int p;
+long int p = va_arg(content, long int);
 unsigned long int value;
-	p = va_arg(content, long int);
-	p = size_val(p, size_s);
+	p = conv_size(p, size_s);
 if (p == 0)
 {
-	buffer[i--] = '0';
+	buffer[n--] = '0';
 }
 	buffer[BUFF_SIZE - 1] = '\0';
 	value = (unsigned long int)p;
@@ -33,7 +32,7 @@ if (p < 0)
 }
 while (value > 0)
 {
-	buffer[n--] = (value % 10) + '0');
+	buffer[n--] = (value % 10) + '0';
 	value = value / 10;
 }
 	n++;
@@ -57,20 +56,25 @@ int format_b(va_list content, char buffer[],
 unsigned int a, b, c, d;
 int check;
 unsigned int array[32];
+	EMPTY(buffer);
+	EMPTY(f_lags);
+	EMPTY(width);
+	EMPTY(prec);
+	EMPTY(size_s);
 	a = va_arg(content, unsigned int);
 	b = 2147483648;
 	array[0] = a / b;
 for (c = 1; c < 32; c++)
 {
 	b = b / 2;
-	array[i] = (a / b) % 2;
+	array[c] = (a / b) % 2;
 }
-for (c = 0; d = 0, check = 0; c < 32; c++)
+for (c = 0, d = 0, check = 0; c < 32; c++)
 {
 	d = d + array[c];
 if (d || c == 31)
 {
-char f = '0' + array[i];
+char f = '0' + array[c];
 	write(1, &f, 1);
 	check++;
 }

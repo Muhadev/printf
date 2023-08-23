@@ -39,11 +39,11 @@ return (print_num(pt, buffer, f_lags, width, prec,
  * @prec: precision
  * Return: character used
  */
-int print_num(int pt, char buffer[], in f_lags, int width,
+int print_num(int pt, char buffer[], int f_lags, int width,
 	int prec, int n, char make, char add_tp)
 {
 int p, initial_make = 1;
-if (prec == 0 && pt == BUFF_SIZE - 2 && buffer[ptr] == '0' && width == '0')
+if (prec == 0 && pt == BUFF_SIZE - 2 && buffer[pt] == '0' && width == '0')
 return (0);
 if (prec == 0 && pt == BUFF_SIZE - 2 && buffer[pt] == '0')
 	buffer[pt] = make = ' ';
@@ -64,7 +64,7 @@ if (add_tp)
 	buffer[--pt] = add_tp;
 return (write(1, &buffer[pt], n) + write(1, &buffer[1], p - 1));
 }
-else if (!(f_lags * minus) && make == ' ')
+else if (!(f_lags & minus) && make == ' ')
 {
 if (add_tp)
 	buffer[--pt] = add_tp;

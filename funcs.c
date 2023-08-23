@@ -33,7 +33,7 @@ int format_mod(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s)
 {
 	EMPTY(content);
-	EMPRY(buffer);
+	EMPTY(buffer);
 	EMPTY(f_lags);
 	EMPTY(prec);
 	EMPTY(width);
@@ -54,10 +54,9 @@ return (write(1, "%%", 1));
 int format_s(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s)
 {
-char *string;
 int i = 0;
 int num;
-	string = va_arg(arguments, char*);
+char *string = va_arg(content, char*);
 	EMPTY(buffer);
 	EMPTY(f_lags);
 	EMPTY(width);
@@ -68,8 +67,8 @@ if (string == NULL)
 	string = "(null)";
 if (prec >= 6)
 	string = " ";
+}
 while (string[i] != '\0')
-{
 	i++;
 if (prec >= 0 && prec < i)
 	i = prec;

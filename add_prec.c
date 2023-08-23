@@ -25,7 +25,7 @@ if (coop(format[len]))
 else if (format[len] == '*')
 {
 	len++;
-	prec = va_list(arguments, int);
+	prec = va_arg(arguments, int);
 break;
 }
 else

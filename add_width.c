@@ -13,7 +13,7 @@ int len;
 int width = 0;
 for (len = *n + 1; format[len] != '\0'; len++)
 {
-for (coop(format[len]))
+if (coop(format[len]))
 {
 	width = width * 10;
 	width = width + format[len] - '0';
@@ -21,7 +21,7 @@ for (coop(format[len]))
 else if (format[len] == '*')
 {
 	len++;
-	width = va_list(arguments, int);
+	width = va_arg(arguments, int);
 break;
 }
 else

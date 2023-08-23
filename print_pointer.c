@@ -27,7 +27,7 @@ if (f_lags & minus && make == ' ')
 	buffer[--pt] = '0';
 if (add_tp)
 	buffer[--pt] = add_tp;
-return (write(1, &buffer[pt], n) + write(1, &buffer[3], i - 3));
+return (write(1, &buffer[pt], n) + write(1, &buffer[3], p  - 3));
 }
 else if (!(f_lags & minus) && make == ' ')
 {
@@ -43,7 +43,7 @@ if (add_tp)
 	buffer[--initial_make] = add_tp;
 buffer[1] = '0';
 buffer[2] = 'x';
-return (write(1, &buffer[initial_start], p - initial_make) +
+return (write(1, &buffer[initial_make], p - initial_make) +
 	write(1, &buffer[pt], n - (1 - initial_make) - 2));
 }
 }

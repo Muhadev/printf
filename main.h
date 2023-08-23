@@ -21,13 +21,12 @@
 /**
  * struct mem - struct
  * @format: validate chars
- * @f: function
+ * @fun: function
  */
-
-typedef struct mem
+struct format
 {
 char format;
-int (*f)(va_list, char[], int, int, int, int);
+int (*fun)(va_list, char[], int, int, int, int);
 };
 /**
  * typedef struct cond cond_t - print unsigned int output
@@ -35,7 +34,7 @@ int (*f)(va_list, char[], int, int, int, int);
  * @cond_t: no return
  */
 
-typedef struct cond cond_t;
+typedef struct format cond_t;
 
 int _printf(const char *format, ...);
 int design_printf(const char *format, int *pt, va_list arguments,
@@ -50,6 +49,9 @@ int format_mod(va_list content, char buffer[],
 int format_i(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s);
 int format_b(va_list content, char buffer[],
+	int f_lags, int width, int prec, int size_s);
+
+int format_s(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s);
 
 int add_prec(const char *format, int *n, va_list arguments);
@@ -75,5 +77,8 @@ int design_char(char ch, char buffer[],
 	int f_lags, int width, int prec, int size_s);
 int design_printf(const char *format, int *pt, va_list arguments,
 	char buffer[], int f_lags, int width, int prec, int size_s);
+
+int print_num(int pt, char buffer[], int f_lags, int width,
+	int prec, int n, char make, char add_tp);
 
 #endif
