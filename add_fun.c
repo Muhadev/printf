@@ -25,7 +25,7 @@ int integer = 0;
 while (cond[integer].NoNull != NULL)
 {
 if (letter == cond[integer].NoNull[0])
-return (cond[integer].str);
+return (cond[integer].func);
 	integer++;
 }
 return (NULL);
