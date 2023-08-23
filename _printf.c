@@ -3,6 +3,8 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdarg.h>
+
+void design_buffer(char buffer[], int *buff);
 /**
  * _printf - customised printf
  * @format: of spec format
@@ -10,41 +12,52 @@
 */
 int _printf(const char *format, ...)
 {
-if (format != NULL)
-{
-int point = 0, num = 0;
-int (*ptr)(va_list);
+int n;
+int num = 0;
+int chars_count = 0;
+int size_s, prec, f_lags, buff = 0, width;
 va_list arguments;
+if (format == NULL)
+return (-1);
 	va_start(arguments, format);
-if (format[0] == '%' && format[1] == '\0')
+for (n = 0; format && format[n] != '\0'; n++)
+{
+if (format[n] != '%')
+{
+	buffer[buff++] format[n];
+if (buff == BUFF_SIZE)
+	design_buffer(buffer, &buff);
+	chars_count++;
+}
+else
+{
+	design_buffer(buffer, &buff);
+	f_lags = add_flags(fornat, &n);
+	prec = add_prec(format, &n, arguments);
+	width = add_width(format, &n, arguments);
+	size_s = add_size(format, &n);
+	++n;
+	num = result(format, &n, arguments, buffer, f_lags, prec, width, size_s);
+if (num == -1)
 return (-1);
-while (format != NULL && format[num] != '\0')
-{
-if (format[num] == '%')
-{
-if (format[num + 1] == '%')
-{
-	point += _putchar(format[num]);
-	num = num + 2;
-}
-else
-{
-	ptr = apply_func(format[num + 1]);
-if (ptr)
-	point = point + ptr(arguments);
-else
-	point = _putchar(format[num]) + _putchar(format[num + 1]);
-num += 2;
+	chars_count = chars_count + num;
 }
 }
-else
-{
-	point += _putchar(format[num]);
-	num++;
-}
-}
+	design_buffer(buffer, buff);
 	va_end(arguments);
-return (point);
+return (chars_count);
 }
-return (-1);
+
+
+/**
+ * design_buffer - display context of a buffer
+ * @buffer: characters
+ * @buff: loop through the characters
+ */
+
+void design_buffer(char buffer[], int *buff)
+{
+if (*buff > 0)
+	write(1, &buffer[0], *buff);
+	buff = 0;
 }

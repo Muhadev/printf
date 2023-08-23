@@ -4,98 +4,77 @@
 
 /**
  * format_c - display character
- * @arguments: the character arguments implemented
+ * @f_lags: check flags
+ * @width: width
+ * @size_s: size
+ * @buffer: array of buffer
+ * @content: informations
+ * @prec: precision
  * Return: character used
  */
-int format_c(va_list arguments)
+int format_c(va_list content, char buffer[],
+	int f_lags, int width, int prec, int size_s)
 {
-int characters;
-	characters = va_arg(arguments, int);
-return (_putchar(characters));
+char characters;
+	characters = va_arg(content, int);
+return (design_char(characters, buffer, f_lags, prec, width, size_s));
 }
 
 /**
- * format_mod - display %
- * @arguments:  the % arguments implemented
- * Return: module used
+ * format_mod - display character
+ * @f_lags: check flags
+ * @width: width
+ * @size_s: size
+ * @buffer: array of buffer
+ * @content: informations
+ * @prec: precision
+ * Return: character used
  */
-int format_mod(va_list arguments)
-{
-char *array;
 
-	array = "%";
-while (va_arg(arguments, int) == *array)
+int format_mod(va_list content, char buffer[],
+	int f_lags, int width, int prec, int size_s)
 {
-return (*array);
+return (write(1, "%%", 1);
 }
-return (*array);
-}
-
 /**
- * format_s - display string
- * @arguments: the string arguments implemented
- * Return: string used
+ * format_s - display character
+ * @f_lags: check flags
+ * @width: width
+ * @size_s: size
+ * @buffer: array of buffer
+ * @content: informations
+ * @prec: precision
+ * Return: character used
  */
-int format_s(va_list arguments)
+
+int format_s(va_list content, char buffer[],
+	int f_lags, int width, int prec, int size_s)
 {
 char *string;
+int i = 0;
 int num;
-int i;
-	num = 0;
-	i = 0;
 	string = va_arg(arguments, char*);
 if (string == NULL)
+{
 	string = "(null)";
-while (string[num] != '\0')
+if (prec >= 6)
+	string = " ";
+while (string[i] != '\0')
 {
-	_putchar(string[num]);
-	num++;
 	i++;
-}
-return (i);
-}
-
-/**
- * format_d - display float
- * @arguments: the float arguments implemented
- * Return: float used
- */
-int format_d(va_list arguments)
+if (prec >= 0 && prec < i)
+	i = prec;
+if (width > i)
 {
-unsigned int divisor, num, add, temp;
-int p;
-	p = va_arg(arguments, int);
-	add = 0;
-if (p < 0)
+if (f_lags & get_fmt)
 {
-	num = (-1 * p);
-	add = add + _putchar('-');
-}
-else
+	write(1, &string[0], i);
+for (num = width - i; num > 0; num--)
 {
-	num = p;
+	write(1, " ", 1);
 }
-	temp = num;
-	divisor = 1;
-while (temp > 9)
-{
-	temp /= 10;
-	divisor *= 10;
+return (width);
 }
-while (divisor >= 1)
-{
-	add = add + _putchar('0' + ((num / divisor) % 10));
-	divisor /= 10;
 }
-return (add);
-}
-
-/**
- * format_i - display integer
- * @arguments: the integer arguments implemented
- * Return: float function used
- */
-int format_i(va_list arguments)
-{
-return (format_d(arguments));
+return (write(1, string, i));
 }

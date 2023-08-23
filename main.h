@@ -3,30 +3,77 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
+
+
+#define EMPTY(fr) (void)(fr)
+#define BUFF_SIZE 1024
+
+#define TWO_VAL 2
+#define ONE_VAL 1
+
+#define minus 1
+#define plus 2
+#define zero 4
+#define hash_tag 8
+#define space 16
 
 /**
  * struct mem - struct
- * @NoNull: validate chars
- * @func:  function
+ * @format: validate chars
+ * @f: function
  */
 
 typedef struct mem
 {
-char *NoNull;
-int (*func)(va_list);
-} offset;
+char format;
+int (*f)(va_list, char[], int, int, int, int);
+};
+/**
+ * typedef struct cond cond_t - print unsigned int output
+ * @cond: variable inputs
+ * @cond_t: no return
+ */
+
+typedef struct cond cond_t;
 
 int _printf(const char *format, ...);
-int (*apply_func(char letter))(va_list arguments);
-int format_x(va_list arguments);
-int format_c(va_list arguments);
-int format_i(va_list arguments);
-int format_d(va_list arguments);
-int format_mod(va_list arguments);
-int format_s(va_list arguments);
-int format_X(va_list arguments);
-int _putchar(char c);
-int format_o(va_list arguments);
-int format_u(va_list arguments);
-int format_b(va_list arguments);
+int design_printf(const char *format, int *pt, va_list arguments,
+	char buffer[], int f_lags, int width, int prec, int size_s);
+int format_c(va_list content, char buffer[],
+	int f_lags, int width, int prec, int size_s);
+int format_s(va_list content, char buffer[],
+	int f_lags, int width, int prec, int size_s);
+int format_mod(va_list content, char buffer[],
+	int f_lags, int width, int prec, int size_s);
+
+int format_i(va_list content, char buffer[],
+	int f_lags, int width, int prec, int size_s);
+int format_b(va_list content, char buffer[],
+	int f_lags, int width, int prec, int size_s);
+
+int add_prec(const char *format, int *n, va_list arguments);
+int add_width(const char *format, int *n, va_list arguments);
+int add_size(const char *format, int *n);
+int add_flags(const char *format, int *n);
+
+
+
+
+long int conv_size(long int n, int size_s);
+long int conv_unsign(unsigned long int n, int size_s);
+int allow_print(char ch);
+int apply_hexa(char ascii_pro, char buffer[], int n);
+int coop(char ch);
+
+
+int num_write(int issue, int pt, char buffer[],
+	int f_lags, int width, int prec, int size_s);
+int print_pointer(char buffer[], int pt, int n, int width,
+	int f_lags, char make, char add_tp, int initial_make);
+int design_char(char ch, char buffer[],
+	int f_lags, int width, int prec, int size_s);
+int design_printf(const char *format, int *pt, va_list arguments,
+	char buffer[], int f_lags, int width, int prec, int size_s);
+
 #endif
