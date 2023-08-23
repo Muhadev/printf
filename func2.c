@@ -42,7 +42,7 @@ int format_o(va_list content, char buffer[], int f_lags,
 	int width, int prec, int size_s)
 {
 int n = BUFF_SIZE - 2;
-unsigned long int value = va_arg(content, unsigned lon int);
+unsigned long int value = va_arg(content, unsigned long int);
 unsigned long int num = value;
 	EMPTY(width);
 	value = conv_unsign(value, size_s);

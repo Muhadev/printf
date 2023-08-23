@@ -87,4 +87,6 @@ int design_printf(const char *format, int *pt, va_list arguments,
 int print_num(int pt, char buffer[], int f_lags, int width,
 	int prec, int n, char make, char add_tp);
 
+int write_unsign(int issue, int pt, char buffer[],
+	int f_lags, int width, int prec, int size_s);
 #endif
