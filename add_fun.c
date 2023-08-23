@@ -15,11 +15,6 @@ int integer = 0;
 		{"i", format_i},
 		{"c", format_c},
 		{"s", format_s},
-		{"b", format_b},
-		{"x", format_x},
-		{"X", format_X},
-		{"o", format_o};
-		{"u", format_u},
 		{NULL, NULL}
 };
 while (cond[integer].NoNull != NULL)
