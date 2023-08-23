@@ -10,7 +10,7 @@
  * @func:  function
  */
 
-typedef strct mem
+typedef struct mem
 {
 char *NoNull;
 int (*func)(va_list);
