@@ -28,4 +28,5 @@ int format_X(va_list arguments);
 int format_o(va_list arguments);
 int format_u(va_list arguments);
 int _apply(char letter);
+int _string(char *p);
 #endif /* MAIN_H */
