@@ -11,7 +11,7 @@ int _string(char *p)
 int n;
 for (n = 0; p[n] != '\0'; n++)
 {
-	_putchar(str[i]);
+	_putchar(p[i]);
 }
 return (n);
 }
