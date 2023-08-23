@@ -15,7 +15,7 @@ typedef struct mem
 } offset;
 
 int _printf(const char *format, ...);
-int _putchar(char c);
+int _putchar(char letter);
 int (*apply_func(char letter))(va_list arguments);
 int format_s(va_list arguments);
 int format_c(va_list arguments);
@@ -27,6 +27,5 @@ int format_x(va_list arguments);
 int format_X(va_list arguments);
 int format_o(va_list arguments);
 int format_u(va_list arguments);
-int _apply(char letter);
 int _string(char *p);
 #endif /* MAIN_H */
