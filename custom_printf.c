@@ -19,7 +19,8 @@ int n, num = 0, chars_count = -1;
 	cond_t array[] = {
 		{'b', format_b}, {'c', format_c},
 		{'i', format_i}, {'s', format_s}, 
-		{'%', format_mod}, {'\0', NULL}
+		{'%', format_mod}, {'o', format_o},
+		{'u', format_u}, {'\0', NULL}
 };
 for (n = 0; array[n].format != '\0'; n++)
 if (format[*pt] == array[n].format)
