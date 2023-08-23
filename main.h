@@ -14,7 +14,7 @@ typedef struct mem
 {
 char *NoNull;
 int (*func)(va_list);
-} offest;
+} offset;
 
 int _printf(const char *format, ...);
 int (*apply_func(char letter))(va_list arguments);
