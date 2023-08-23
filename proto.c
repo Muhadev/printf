@@ -67,13 +67,13 @@ return ((int)n);
  * @n: number to work on
  * @size_s: for the type to be add
  * Return: casted value
- */ 
+ */
 
 long int conv_unsign(unsigned long int n, int size_s)
 {
 if (size_s == TWO_VAL)
 return (n);
 else if (size_s == ONE_VAL)
-return ((short)n);
-return ((int)n);
+return ((unsigned short)n);
+return ((unsigned int)n);
 }

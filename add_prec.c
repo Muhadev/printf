@@ -32,5 +32,5 @@ else
 break;
 }
 	*n = len - 1;
-return (prec);	
+return (prec);
 }

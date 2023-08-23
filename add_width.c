@@ -4,7 +4,7 @@
  * add_width - size of the content
  * @format: format string
  * @n: variables
- * @arguments information
+ * @arguments: information
  * Return: width
  */
 int add_width(const char *format, int *n, va_list arguments)

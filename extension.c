@@ -15,7 +15,7 @@ int format_i(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s)
 {
 int n = BUFF_SIZE - 2;
-int minus = 0;
+int issue = 0;
 long int p;
 unsigned long int value;
 	p = va_arg(content, long int);
@@ -25,7 +25,7 @@ if (p == 0)
 	buffer[i--] = '0';
 }
 	buffer[BUFF_SIZE - 1] = '\0';
-	value = unsigned long int p;
+	value = (unsigned long int)p;
 if (p < 0)
 {
 	value = (unsigned long int)((-1) * p);

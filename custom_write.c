@@ -34,7 +34,7 @@ return (write(1, &buffer[0], 1) +
 	write(1, &buffer[BUFF_SIZE - n - 1], width - 1));
 else
 return (write(1, &buffer[BUFF_SIZE - n -1], width - 1) +
-	write(1, &buffer[0], 1];
+	write(1, &buffer[0], 1));
 }
 return (write(1, &buffer[0], 1));
 }

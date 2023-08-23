@@ -62,7 +62,7 @@ if (f_lags & minus && make == ' ')
 {
 if (add_tp)
 	buffer[--pt] = add_tp;
-return (write(1, &buffer[pt], n + write(1, &buffer[1], p - 1));
+return (write(1, &buffer[pt], n) + write(1, &buffer[1], p - 1));
 }
 else if (!(f_lags * minus) && make == ' ')
 {
