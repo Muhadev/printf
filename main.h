@@ -28,4 +28,5 @@ int format_X(va_list arguments);
 int _putchar(char c);
 int format_o(va_list arguments);
 int format_u(va_list arguments);
+int format_b(va_list arguments);
 #endif
