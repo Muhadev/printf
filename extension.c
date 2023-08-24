@@ -15,16 +15,16 @@ int format_i(va_list content, char buffer[],
 {
 int n = BUFF_SIZE - 2;
 int issue = 0;
-int p = va_arg(content, int);
-int value;
+long int p = va_arg(content, long int);
+unsigned long int value;
 	p = conv_size(p, size_s);
 if (p == 0)
 	buffer[n--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';
-	value = (int)p;
+	value = (unsigned long int)p;
 if (p < 0)
 {
-	value = (int)((-1) * p);
+	value = (unsigned long int)((-1) * p);
 	issue = 1;
 }
 while (value > 0)
