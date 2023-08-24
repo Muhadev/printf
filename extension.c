@@ -28,7 +28,7 @@ if (p == INT_SMALL)
 	issue = 1;
 }
 else if (p == INT_BIG)
-	value = (unsigned long int)(-p);
+	value = (unsigned long int)p;
 else if (p < 0)
 {
 	value = (unsigned long int)(-p);
