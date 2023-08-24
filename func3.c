@@ -46,14 +46,14 @@ return (format_luh(content, "0123456789ABCDEF", buffer, f_lags,
  * @prec: precision
  * Return: character used
  */
-int format_luh(va_list content, char buffer[], int f_lags,
-	int width, int prec, int size_s, char flag_o, char apply[])
+int format_luh(va_list content, char apply[], char buffer[], int f_lags,
+	char flag_o, int width, int prec, int size_s)
 {
 int n = BUFF_SIZE - 2;
 unsigned long int valid = va_arg(content, unsigned long int);
 unsigned long int num = valid;
 	EMPTY(width);
-	valid = conv_unsign(valid, size_s);
+valid = conv_unsign(valid, size_s);
 if (valid == 0)
 	buffer[n--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';
