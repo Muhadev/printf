@@ -28,6 +28,7 @@ return (design_char(ch, buffer, f_lags, width, pre, size_s));
 int format_mod(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s)
 {	
+	EMPTY(content);
 	EMPTY(buffer);
 	EMPTY(f_lags);
 	EMPTY(prec);
@@ -52,7 +53,6 @@ int format_s(va_list content, char buffer[],
 int i = 0;
 int num;
 char *string = va_arg(content, char *);
-	EMPTY(content);
 	EMPTY(buffer);
 	EMPTY(f_lags);
 	EMPTY(width);
