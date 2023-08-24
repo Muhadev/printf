@@ -20,7 +20,7 @@
 #define space 16
 
 /**
- * struct mem - struct
+ * struct format - struct
  * @format: validate chars
  * @fun: function
  */
@@ -94,5 +94,5 @@ int format_uhex(va_list content, char buffer[], int f_lags,
 int format_hex(va_list content, char buffer[], int f_lags,
 	int width, int prec, int size_s);
 int write_pointer(va_list content, char buffer[],
-        int f_lags, int width, int prec, int size_s);
+	int f_lags, int width, int prec, int size_s);
 #endif /* MAIN_H */
