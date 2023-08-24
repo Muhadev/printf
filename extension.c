@@ -1,12 +1,11 @@
 #include "main.h"
-
 /**
  * format_i - display character
  * @f_lags: check flags
  * @width: width
  * @size_s: size
  * @buffer: array of buffer
- * @content: informations
+ * @content: iniformations
  * @prec: precision
  * Return: character used
  */
@@ -16,16 +15,16 @@ int format_i(va_list content, char buffer[],
 {
 int n = BUFF_SIZE - 2;
 int issue = 0;
-long int p = va_arg(content, long int);
-unsigned long int value;
+int p = va_arg(content, int);
+int value;
 	p = conv_size(p, size_s);
 if (p == 0)
 	buffer[n--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';
-	value = (unsigned long int)p;
+	value = (int)p;
 if (p < 0)
 {
-	value = (unsigned long int)((-1) * p);
+	value = (int)((-1) * p);
 	issue = 1;
 }
 while (value > 0)
