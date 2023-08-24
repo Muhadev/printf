@@ -67,7 +67,7 @@ if (prec >= 6)
 }
 while (string[i] != '\0')
 	i++;
-if (prec >= 0 && prec > i)
+if (prec >= 0 && prec < i)
 	i = prec;
 if (width > i)
 {
