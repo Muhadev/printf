@@ -18,7 +18,7 @@ int design_printf(const char *format, int *pt, va_list arguments,
 int n, num = 0, chars_count = -1;
 	cond_t array[] = {
 		{'b', format_b}, {'c', format_c},
-		{'d', format_i},
+		{'d', format_i}, {'p', write_pointer},
 		{'i', format_i}, {'s', format_s},
 		{'%', format_mod}, {'o', format_o},
 		{'u', format_u}, {'x', format_hex},

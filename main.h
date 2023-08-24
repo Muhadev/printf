@@ -51,9 +51,6 @@ int format_i(va_list content, char buffer[],
 int format_b(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s);
 
-int format_s(va_list content, char buffer[],
-	int f_lags, int width, int prec, int size_s);
-
 int format_o(va_list content, char buffer[], int f_lags,
 	int width, int prec, int size_s);
 int format_u(va_list content, char buffer[], int f_lags,

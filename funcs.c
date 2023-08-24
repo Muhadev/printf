@@ -55,7 +55,7 @@ int format_s(va_list content, char buffer[],
 {
 int i = 0;
 int num;
-char *string = va_arg(content, char*);
+char *string = va_arg(content, char *);
 	EMPTY(buffer);
 	EMPTY(f_lags);
 	EMPTY(width);
@@ -68,7 +68,9 @@ if (prec >= 6)
 	string = "	";
 }
 while (string[i] != '\0')
+{
 	i++;
+}
 if (prec >= 0 && prec < i)
 	i = prec;
 if (width > i)
