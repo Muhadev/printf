@@ -14,8 +14,7 @@
 int format_c(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s)
 {
-char characters;
-	characters = va_arg(content, int);
+char characters =  va_arg(content, int);
 return (design_char(characters, buffer, f_lags, prec, width, size_s));
 }
 
@@ -66,7 +65,7 @@ if (string == NULL)
 {
 	string = "(null)";
 if (prec >= 6)
-	string = " ";
+	string = "	";
 }
 while (string[i] != '\0')
 	i++;
