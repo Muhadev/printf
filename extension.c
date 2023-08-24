@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * format_i - display character
  * @f_lags: check flags
