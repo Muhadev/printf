@@ -45,7 +45,8 @@ int format_s(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s);
 int format_mod(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s);
-
+int unknown_print(va_list content, char buffer[], int f_lags,
+	int width, int prec, int size_s);
 int format_i(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s);
 int format_b(va_list content, char buffer[],
