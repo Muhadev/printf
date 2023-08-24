@@ -20,7 +20,8 @@ int n, num = 0, chars_count = -1;
 		{'b', format_b}, {'c', format_c},
 		{'i', format_i}, {'s', format_s}, 
 		{'%', format_mod}, {'o', format_o},
-		{'u', format_u}, {'\0', NULL}
+		{'u', format_u}, {'x', format_hex},
+		{'X', format_uhex}, {'\0', NULL}
 };
 for (n = 0; array[n].format != '\0'; n++)
 if (format[*pt] == array[n].format)

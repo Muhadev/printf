@@ -90,7 +90,7 @@ int print_num(int pt, char buffer[], int f_lags, int width,
 int write_unsign(int issue, int pt, char buffer[],
 	int f_lags, int width, int prec, int size_s);
 int format_luh(va_list content, char buffer[], int f_lags,
-	int width, int prec, int size_s, char flag_o char apply[]);
+	int width, int prec, int size_s, char flag_o, char apply[]);
 int format_uhex(va_list content, char buffer[], int f_lags,
 	int width, int prec, int size_s);
 int format_hex(va_list content, char buffer[], int f_lags,
