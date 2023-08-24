@@ -12,8 +12,8 @@
 int format_c(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s)
 {
-char characters =  va_arg(content, int);
-return (design_char(characters, buffer, f_lags, prec, width, size_s));
+char ch =  va_arg(content, int);
+return (design_char(ch));
 }
 /**
  * format_mod - display character
