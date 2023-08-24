@@ -22,11 +22,13 @@ unsigned long int value;
 if (p == 0)
 	buffer[n--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';
-if (p == INT_MIN)
+if (p == INT_SMALL)
 {
 	value = (unsigned long int)(-(long)INT_MIN);
 	issue = 1;
 }
+else if (p == INT_SMALL)
+	value = (unsigned long int)(-p);
 else if (p < 0)
 {
 	value = (unsigned long int)(-p);
