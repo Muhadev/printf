@@ -38,7 +38,8 @@ else
 	width = add_width(format, &n, arguments);
 	size_s = add_size(format, &n);
 	++n;
-	num = design_printf(format, &n, arguments, buffer, f_lags, prec, width, size_s);
+	num = design_printf(format, &n, arguments,
+		buffer, f_lags, prec, width, size_s);
 if (num == -1)
 return (-1);
 	chars_count = chars_count + num;

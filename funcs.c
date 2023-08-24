@@ -15,7 +15,6 @@ int format_c(va_list content, char buffer[],
 char characters =  va_arg(content, int);
 return (design_char(characters, buffer, f_lags, prec, width, size_s));
 }
-
 /**
  * format_mod - display character
  * @f_lags: check flags
