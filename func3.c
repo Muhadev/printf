@@ -14,7 +14,7 @@ int format_hex(va_list content, char buffer[], int f_lags,
 	int width, int prec, int size_s)
 {
 return (format_luh(content, "0123456789abcdef", buffer, f_lags,
-'x', width, prec, size_s));
+	'x', width, prec, size_s));
 }
 
 /**
@@ -31,7 +31,7 @@ int format_uhex(va_list content, char buffer[], int f_lags,
 	int width, int prec, int size_s)
 {
 return (format_luh(content, "0123456789ABCDEF", buffer, f_lags,
-'X', width, prec, size_s));
+	'X', width, prec, size_s));
 }
 
 /**

@@ -19,7 +19,7 @@ int pt = BUFF_SIZE - 2, i  = 2;
 int initial_make = 1;
 unsigned long addre_po;
 char apply[] = "0123456789abcdef";
-void *address = va_arg(content, void);
+void *address = va_arg(content, void *);
 
 	EMPTY(width);
 	EMPTY(size_s);
