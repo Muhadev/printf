@@ -43,7 +43,8 @@ int print_num(int pt, char buffer[], int f_lags, int width,
 	int prec, int n, char make, char add_tp)
 {
 int p, initial_make = 1;
-if (prec == 0 && pt == BUFF_SIZE - 2 && buffer[pt] == '0' && width == '0')
+if (prec == 0 && pt == BUFF_SIZE - 2 && buffer[pt] == '0' &&
+	width == '0')
 return (0);
 if (prec == 0 && pt == BUFF_SIZE - 2 && buffer[pt] == '0')
 	buffer[pt] = make = ' ';
