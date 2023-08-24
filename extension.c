@@ -19,23 +19,22 @@ int issue = 0;
 long int p = va_arg(content, long int);
 unsigned long int value;
 	p = conv_size(p, size_s);
-if (p == INT_MIN)
-{
-	value = (unsigned long int)(-(long long)INT_MIN);
-	issue = 1;
-}
 if (p == 0)
 	buffer[n--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';
 if (p == INT_MIN)
 {
-        value = (unsigned long int)(-(long long)INT_MIN);
+        value = (unsigned long int)(-(long)INT_MIN);
         issue = 1;
 }
-if (p < 0)
+else if (p < 0)
 {
-	value = (unsigned long int)((-1) * p);
+	value = (unsigned long int)(-p);
 	issue = 1;
+}
+else
+{
+	value = (unsigned long int)p;
 }
 while (value > 0)
 {
