@@ -24,13 +24,13 @@ if (p == 0)
 buffer[BUFF_SIZE - 1] = '\0';
 if (p == INT_MIN)
 {
-        value = (unsigned long int)(-(long)INT_MIN);
-        issue = 1;
+	value = (unsigned long int)(-(long)INT_MIN);
+	issue = 1;
 }
 else if (p < 0)
 {
 	value = (unsigned long int)(-p);
-	issue = 1;
+issue = 1;
 }
 else
 {
