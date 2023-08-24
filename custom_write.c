@@ -7,7 +7,6 @@
  * @width: width
  * @size_s: size
  * @buffer: array of buffer
- * @content: informations
  * @prec: precision
  * Return: character used
  */
@@ -33,7 +32,7 @@ if (f_lags & minus)
 return (write(1, &buffer[0], 1) +
 	write(1, &buffer[BUFF_SIZE - n - 1], width - 1));
 else
-return (write(1, &buffer[BUFF_SIZE - n -1], width - 1) +
+return (write(1, &buffer[BUFF_SIZE - n - 1], width - 1) +
 	write(1, &buffer[0], 1));
 }
 return (write(1, &buffer[0], 1));

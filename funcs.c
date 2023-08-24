@@ -27,7 +27,7 @@ return (design_char(character, buffer, f_lags, width, prec, size_s));
  */
 int format_mod(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s)
-{	
+{
 	EMPTY(content);
 	EMPTY(buffer);
 	EMPTY(f_lags);

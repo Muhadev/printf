@@ -19,10 +19,11 @@ int n, num = 0, chars_count = -1;
 	cond_t array[] = {
 		{'b', format_b}, {'c', format_c},
 		{'d', format_i}, {'p', write_pointer},
-		{'i', format_i}, {'s', format_s}, {'S',unknown_print},
-		{'%', format_mod}, {'o', format_o},
-		{'u', format_u}, {'x', format_hex},
-		{'X', format_uhex}, {'\0', NULL}
+		{'i', format_i}, {'s', format_s},
+		{'S', unknown_print}, {'%', format_mod},
+		{'o', format_o}, {'u', format_u},
+		{'x', format_hex}, {'X', format_uhex},
+		{'\0', NULL}
 };
 for (n = 0; array[n].format != '\0'; n++)
 if (format[*pt] == array[n].format)
@@ -32,9 +33,9 @@ if (array[n].format == '\0')
 {
 if (format[*pt] == '\0')
 return (-1);
-	num = num + write(1, "%%", 1);
+	num += write(1, "%%", 1);
 if (format[*pt - 1] == ' ')
-	num = num + write(1, " ", 1);
+	num += write(1, " ", 1);
 else if (width)
 {
 	--(*pt);
@@ -44,7 +45,7 @@ if (format[*pt] == ' ')
 	--(*pt);
 return (1);
 }
-	num = num + write(1, &format[*pt], 1);
+	num += write(1, &format[*pt], 1);
 return (num);
 }
 return (chars_count);

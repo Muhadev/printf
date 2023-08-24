@@ -2,7 +2,7 @@
 
 
 /**
- * add_flag - find flags
+ * add_flags - find flags
  * @format: format strings
  * @n: variable
  * Return: check flags
