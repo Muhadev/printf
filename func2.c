@@ -14,16 +14,28 @@ int format_u(va_list content, char buffer[], int f_lags,
 	int width, int prec, int size_s)
 {
 int n = BUFF_SIZE - 2;
+issue = 0;
 long int value = va_arg(content, long int);
 value =  conv_unsign(value, size_s);
 if (value == 0)
-	write(1, "0", 1);	
-buffer[n--] = '0';
+	write(1, "0", 1);
 buffer[BUFF_SIZE - 1] = '\0';
+value = (unsigned long int)value;
 if (value == UINT_MAX)
 {
 	buffer[n--] = '8';
 	value /= 10;
+	issue = 1;
+}
+if (value < 0)
+{
+	value = (unsigned long int)((-1) * value);
+	issue = 1;
+}
+if (value < 0)
+{
+	value = (unsigned long int)((-1) * value);
+	issue = 1;
 }
 while (value > 0)
 {
