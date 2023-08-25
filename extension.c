@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main.hi"
 /**
  * format_i - display character
  * @f_lags: check flags
@@ -18,6 +18,7 @@ int issue = 0;
 long int p = va_arg(content, long int);
 unsigned long int value;
 	p = conv_size(p, size_s);
+if (
 if (p == 0)
 	buffer[n--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';
@@ -26,6 +27,11 @@ if (p < 0)
 {
 	value = (unsigned long int)((-1) * p);
 	issue = 1;
+}
+if (p == INT_MIN)
+{
+	buffer[n--] = '8';
+	p /= 10;
 }
 while (value > 0)
 {

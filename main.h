@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <limits.h>
 
 #define EMPTY(fr) (void)(fr)
 #define BUFF_SIZE 1024
