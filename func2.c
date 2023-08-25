@@ -32,11 +32,6 @@ if (value < 0)
 	value = (unsigned long int)((-1) * value);
 	issue = 1;
 }
-if (value < 0)
-{
-	value = (unsigned long int)((-1) * value);
-	issue = 1;
-}
 while (value > 0)
 {
 	buffer[n--] = (value % 10) + '0';
