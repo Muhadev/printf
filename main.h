@@ -3,9 +3,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
-
-#define INT_SMALL (-2147483647 - 1)
-#define INT_BIG 2147483647
+#include <limits.h>
 
 #define EMPTY(fr) (void)(fr)
 #define BUFF_SIZE 1024
