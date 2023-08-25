@@ -21,22 +21,10 @@ unsigned long int value;
 if (p == 0)
 	buffer[n--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';
-if (p == INT_MIN)
+if (p < 0)
 {
-	buffer[n--] = '8';
-	value = (unsigned long int)(-(long)p) / 10;
+	value = (unsigned long int)((-1) * p);
 	issue = 1;
-}
-else if (p == INT_MAX)
-	value = (unsigned long int)p;
-else if (p < 0)
-{
-	value = (unsigned long int)(-p);
-issue = 1;
-}
-else
-{
-	value = (unsigned long int)p;
 }
 while (value > 0)
 {
