@@ -24,7 +24,7 @@ buffer[BUFF_SIZE - 1] = '\0';
 	value = (unsigned long int)p;
 if (p == INT_MIN)
 {
-	buffer[n++] = '8';
+	buffer[n--] = '8';
 	p /= 10;
 }
 if (p < 0)
