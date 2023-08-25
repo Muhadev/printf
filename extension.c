@@ -28,17 +28,17 @@ if (p < 0)
 	value = (unsigned long int)((-1) * p);
 	issue = 1;
 }
+if (p == INT_MIN)
+{
+	buffer[n--] = '8';
+	p /= 10;
+}
 while (value > 0)
 {
 	buffer[n--] = (value % 10) + '0';
 	value = value / 10;
 }
 	n++;
-if (p == INT_MIN)
-{
-	buffer[n--] = '8';
-	p /= 10;
-}
 return (num_write(issue, n, buffer, f_lags, width, prec,
 	size_s));
 }
