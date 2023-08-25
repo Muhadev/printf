@@ -14,7 +14,7 @@ int format_u(va_list content, char buffer[], int f_lags,
 	int width, int prec, int size_s)
 {
 int n = BUFF_SIZE - 2;
-unsigned long int value = va_arg(content, unsigned long int);
+long int value = va_arg(content, long int);
 value =  conv_unsign(value, size_s);
 if (value == 0)
 	write(1, "0", 1);
