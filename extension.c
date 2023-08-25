@@ -21,6 +21,7 @@ unsigned long int value;
 if (p == 0)
 	buffer[n--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';
+	value = (unsigned long int)p;
 if (p < 0)
 {
 	value = (unsigned long int)((-1) * p);
