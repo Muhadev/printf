@@ -17,7 +17,8 @@ int n = BUFF_SIZE - 2;
 long int value = va_arg(content, long int);
 value =  conv_unsign(value, size_s);
 if (value == 0)
-	buffer[n--] = '0';
+	write(1, "0", 1);	
+buffer[n--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';
 if (value == UINT_MAX)
 {
