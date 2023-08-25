@@ -1,5 +1,4 @@
 #include "main.h"
-#include <limits.h>
 /**
  * format_i - display character
  * @f_lags: check flags
@@ -23,15 +22,15 @@ if (p == 0)
 	buffer[n--] = '0';
 buffer[BUFF_SIZE - 1] = '\0';
 	value = (unsigned long int)p;
-if (p < 0)
-{
-	value = (unsigned long int)((-1) * p);
-	issue = 1;
-}
 if (p == INT_MIN)
 {
 	buffer[n--] = '8';
 	p /= 10;
+}
+if (p < 0)
+{
+	value = (unsigned long int)((-1) * p);
+	issue = 1;
 }
 while (value > 0)
 {
