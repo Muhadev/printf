@@ -23,6 +23,7 @@ int n, num = 0, chars_count = -1;
 		{'S', unknown_print}, {'%', format_mod},
 		{'o', format_o}, {'u', format_u},
 		{'x', format_hex}, {'X', format_uhex},
+		{'r', reverse_digit}, {'R', rot_string},
 		{'\0', NULL}
 };
 for (n = 0; array[n].format != '\0'; n++)

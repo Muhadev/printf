@@ -95,4 +95,8 @@ int format_hex(va_list content, char buffer[], int f_lags,
 	int width, int prec, int size_s);
 int write_pointer(va_list content, char buffer[],
 	int f_lags, int width, int prec, int size_s);
+int reverse_digit(va_list content, char buffer[], int f_lags,
+	int width, int prec, int size_s);
+int rot_string(va_list content, char buffer[], int f_lags,
+	int width, int prec, int size_s);
 #endif /* MAIN_H */
