@@ -33,7 +33,7 @@ if (width > n)
 {
 for (p = 0; p < width - n; p++)
 	buffer[p] = make;
-buffer = '\0';
+buffer[p]  = '\0';
 if (f_lags & minus)
 {
 return (write(1, &buffer[pt], n) + write(1, &buffer[0], p));
